@@ -48,8 +48,28 @@
     </section>
     <!-- Contact Section-->
     <section id="contactSection" class="page-section">
+        
         <h2>Contact Me</h2>
-        <p>Contact me at Kurtdecena41@gmail.com</p>
+  <form name="contact" method="POST" data-netlify="true" action="/thank-you.html">
+    <input type="hidden" name="form-name" value="contact">
+    
+    <div>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required>
+    </div><br>
+
+    <div>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required>
+    </div><br>
+
+    <div>
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div><br>
+
+    <button type="submit">Send</button>
+  </form>
     </section>
     <!-- Project Section-->
     <section id="projectsSection" class="page-section">
@@ -70,7 +90,7 @@
         <div class="content-wrapper">
             <img src="barong Kurt.jpg" alt="anime" class="img">
             <a href="IT-Kurt-Decena.pdf" download>
-                <button>Download Me</button>
+                <button>Resume</button>
             </a>
             
 

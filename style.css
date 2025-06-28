@@ -194,16 +194,34 @@ li a {
 a button {
   background-color: #4CAF50;
   color: white;
-  padding: 12px 24px;
+  padding: 8px 16px;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
 body.dark-mode a button {
   background-color: #eb2727;
   color: #f0f0f0;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 
