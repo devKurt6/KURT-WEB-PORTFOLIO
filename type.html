@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pure CSS Typing</title>
+  <style>
+    .typewriter {
+      font-family: monospace;
+      font-size: 24px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid black;
+      width: 0ch;
+      animation: typing 4s steps(11) 1s infinite alternate;
+    }
+
+    @keyframes typing {
+      0% {
+        width: 0ch;
+      }
+      50% {
+        width: 11ch; /* "Kurt Decena" is 11 characters */
+      }
+      100% {
+        width: 0ch;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="typewriter">Kurt Decena</div>
+
+</body>
+</html>
