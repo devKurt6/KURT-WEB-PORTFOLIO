@@ -19,15 +19,15 @@ body.dark-mode {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
 }
 
 .frontpage {
   display: flex;
   flex-direction: column;
-  
+
   align-items: left;
-  
+
 }
 
 .frontpage p {
@@ -37,63 +37,73 @@ body.dark-mode {
 
 .two-column-section {
   display: flex;
-  gap: 2rem; /* space between columns */
+  gap: 2rem;
+  /* space between columns */
 }
-.code{
-  padding:0 20%;
-  color:white;
+
+.code {
+  padding: 0 20%;
+  color: white;
   background-color: #1f1f1f;
   text-align: left;
   font-size: 20px;
- 
+
 }
+
 .column {
-  flex: 1; /* both columns take equal width */
+  flex: 1;
+  /* both columns take equal width */
 }
 
-.left {
+.left {}
 
-}
-
-.right {
-
-}
+.right {}
 
 .page-section {
   display: none;
 }
 
 .page-section.active {
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
 }
-.typewriter {
-      font-family: monospace;
-      font-size: 48px;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid black;
-      width: 0ch;
-      animation: typing 4s steps(11) 1s infinite alternate;
-    }
 
-    @keyframes typing {
-      0% {
-        width: 0ch;
-      }
-      40% {
-        width: 11ch;
-      }
-      60% {
-        width: 11ch; /* Pause here (20% duration) */
-      }
-      100% {
-        width: 0ch;
-      }
-    }
+
+
+.typewriter {
+  font-family: monospace;
+  font-size: 48px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid rgb(8, 8, 8);
+  width: 0ch;
+  animation: typing 4s steps(11) 1s infinite alternate;
+}
+
+body.dark-mode .typewriter {
+  border-right: 2px solid rgb(247, 247, 247);
+}
+@keyframes typing {
+  0% {
+    width: 0ch;
+  }
+
+  40% {
+    width: 11ch;
+  }
+
+  60% {
+    width: 11ch;
+    /* Pause here (20% duration) */
+  }
+
+  100% {
+    width: 0ch;
+  }
+}
 
 body.dark-mode nav {
   background-color: #1f1f1f !important;
@@ -143,17 +153,20 @@ img {
   height: auto;
   /* Maintains aspect ratio */
 }
+
 .gray-line {
   border: none;
   height: 1px;
   background-color: gray;
-  margin: 0 0; /* optional spacing */
+  margin: 0 0;
+  /* optional spacing */
 }
 
 .darkmodeIcon {
   margin-left: auto;
   border: none;
 }
+
 /* Navbar layout */
 .navbar {
   display: flex;
@@ -239,7 +252,7 @@ form button {
 
   body.dark-mode nav {
     background-color: #1f1f1f !important;
-    
+
   }
 
   .img {
@@ -254,22 +267,22 @@ form button {
   .frontpage {
     margin-left: 20px;
     margin-right: 20px;
-    
+
   }
 
   .content-wrapper {
     flex-direction: column;
     align-items: center;
-    
+
   }
 
   .frontpage p {
     text-align: center;
     margin: 0.5em 0;
-    
-    
+
+
   }
-  
+
 
   ul {
     text-align: center;
@@ -301,7 +314,7 @@ form button {
     flex-wrap: wrap;
     justify-content: center;
     background-color: white;
-    
+
     margin-top: 10px;
   }
 
@@ -317,7 +330,7 @@ form button {
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  
+
 
   .nav-links li {
     margin: 5px 10px;
@@ -332,7 +345,7 @@ form button {
 
   body.dark-mode .nav-links {
     background-color: #1f1f1f;
-    
+
 
   }
 
