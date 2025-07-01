@@ -80,11 +80,12 @@ body.dark-mode {
   overflow: hidden;
   border-right: 2px solid rgb(8, 8, 8);
   width: 0ch;
-  animation: typing 4s steps(11) 1s infinite alternate;
+  animation: typing 4s steps(11) 1s infinite alternate,blink 0.7s step-end infinite;
 }
 
 body.dark-mode .typewriter {
   border-right: 2px solid rgb(247, 247, 247);
+  animation: typing 4s steps(11) 1s infinite alternate, blink-dark 0.7s step-end infinite;
 }
 @keyframes typing {
   0% {
@@ -102,6 +103,23 @@ body.dark-mode .typewriter {
 
   100% {
     width: 0ch;
+  }
+}
+
+@keyframes blink {
+      0%, 100% {
+        border-color: rgb(0, 0, 0);
+      }
+      50% {
+        border-color: transparent;
+      }
+    }
+@keyframes blink-dark {
+  0%, 100% {
+    border-color: rgb(247, 247, 247); /* white */
+  }
+  50% {
+    border-color: transparent;
   }
 }
 
