@@ -136,9 +136,7 @@ body.dark-mode .menu-toggle {
   }
 }
 
-body.dark-mode nav {
-  background-color: #1f1f1f !important;
-}
+
 
 ul {
   list-style-type: none;
@@ -315,13 +313,14 @@ form button {
   }
 
   body.dark-mode {
-    background-color: #121212;
+    background-color: #000000;
     color: #f0f0f0;
+    transition: background-color 0.3s, color 0.3s;
   }
 
   body.dark-mode nav {
-    background-color: #1f1f1f !important;
-
+    background-color: #1f1f1f !important
+    
   }
 
 .profilepic {
@@ -383,10 +382,12 @@ form button {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    background-color: white;
+    
 
     margin-top: 10px;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
   }
 
   .nav-links.show {
@@ -405,7 +406,7 @@ form button {
 
   .nav-links li {
     margin: 5px 10px;
-    transition: max-height 0.3s ease, opacity 0.s ease;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
   }
 
   .nav-links a,
@@ -414,11 +415,6 @@ form button {
     display: inline-block;
   }
 
-  body.dark-mode .nav-links {
-    background-color: #1f1f1f;
-
-
-  }
 
   /* Hide hamburger when menu is open */
   .menu-toggle.hide {
