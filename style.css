@@ -178,7 +178,7 @@ li a:hover {
 .profilepic {
   float: left;
   clip-path: circle(40%);
-  width: 300px;
+  width: 500px;
   /* Adjust as needed */
   height: auto;
   /* Maintains aspect ratio */
@@ -327,7 +327,7 @@ form button {
 .profilepic {
   float: left;
   clip-path: circle(40%);
-  width: 100px;
+  width: 300px;
   /* Adjust as needed */
   height: auto;
   /* Maintains aspect ratio */
