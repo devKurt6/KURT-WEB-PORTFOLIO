@@ -327,7 +327,7 @@ form button {
 .profilepic {
   float: left;
   clip-path: circle(40%);
-  width: 300px;
+  width: 100px;
   /* Adjust as needed */
   height: auto;
   /* Maintains aspect ratio */
