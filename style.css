@@ -80,13 +80,18 @@ body.dark-mode {
   overflow: hidden;
   border-right: 2px solid rgb(8, 8, 8);
   width: 0ch;
-  animation: typing 4s steps(11) 1s infinite alternate,blink 0.7s step-end infinite;
+  animation: typing 4s steps(11) 1s infinite alternate, blink 0.7s step-end infinite;
 }
 
 body.dark-mode .typewriter {
   border-right: 2px solid rgb(247, 247, 247);
   animation: typing 4s steps(11) 1s infinite alternate, blink-dark 0.7s step-end infinite;
 }
+
+body.dark-mode .menu-toggle {
+  color: #ffffff;
+}
+
 @keyframes typing {
   0% {
     width: 0ch;
@@ -107,17 +112,25 @@ body.dark-mode .typewriter {
 }
 
 @keyframes blink {
-      0%, 100% {
-        border-color: rgb(0, 0, 0);
-      }
-      50% {
-        border-color: transparent;
-      }
-    }
-@keyframes blink-dark {
-  0%, 100% {
-    border-color: rgb(247, 247, 247); /* white */
+
+  0%,
+  100% {
+    border-color: rgb(0, 0, 0);
   }
+
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes blink-dark {
+
+  0%,
+  100% {
+    border-color: rgb(247, 247, 247);
+    /* white */
+  }
+
   50% {
     border-color: transparent;
   }
@@ -162,15 +175,45 @@ li a:hover {
   /* optional for rounded corners */
 }
 
-img {
+.profilepic {
   float: left;
   clip-path: circle(45%);
-
   width: 500px;
   /* Adjust as needed */
   height: auto;
   /* Maintains aspect ratio */
 }
+
+/* Certificate image aspect ratio */
+.certificate {
+  text-align: center;
+  /* center images */
+}
+
+.certificate img {
+  display: inline-block;
+  width: 20%;
+  margin: 5px;
+  border-radius: 20px;
+  transition: transform 0.3s ease, width 0.3s ease;
+  /* smooth animation */
+  box-shadow: 0 4px 12px rgba(173, 49, 49, 0.3); /* ← shadow */
+}
+
+/* On hover, scale up and change width */
+.certificate img:hover {
+  width: 50%;
+  transform: scale(1.05);
+  /* optional slight zoom-in effect */
+  z-index: 1;
+  /* bring to front if overlapping */
+  position: relative;
+}
+.certificate img.enlarged,
+.certificate img:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
 
 .gray-line {
   border: none;
@@ -205,6 +248,7 @@ img {
   background: none;
   border: none;
   cursor: pointer;
+  color: #020202;
 }
 
 nav {
@@ -273,13 +317,8 @@ form button {
 
   }
 
-  .img {
-    width: 100%;
-    float: none;
-    clip-path: circle(30%);
-    display: block;
-    margin: 0 auto;
-  }
+
+
 
   .title,
   .frontpage {
@@ -371,4 +410,28 @@ form button {
   .menu-toggle.hide {
     display: none;
   }
+
+  .certificate {
+    text-align: center;
+  }
+
+  .certificate img {
+    display: inline-block;
+    width: 40%;
+    margin: 5px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, width 0.3s ease;
+    cursor: pointer;
+  }
+
+  .certificate img.enlarged {
+    width: 100%;
+    transform: scale(1.05);
+    z-index: 1;
+    position: relative;
+  }
+  .certificate img.enlarged,
+.certificate img:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
 }

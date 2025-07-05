@@ -50,33 +50,52 @@
     </section>
     <!-- Contact Section-->
     <section id="contactSection" class="page-section">
-        
+
         <h2>Contact Me</h2>
-  <form name="contact" method="POST" netlify action="success.html">
-    <input type="hidden" name="form-name" value="contact">
-    
-    <div>
-      <label for="name">Name:</label><br>
-      <input placeholder="Your name" type="text" id="name" name="name" required>
-    </div><br>
+        <form name="contact" method="POST" netlify action="success.html">
+            <input type="hidden" name="form-name" value="contact">
 
-    <div>
-      <label for="email">Email:</label><br>
-      <input placeholder="Your email" type="email" id="email" name="email" required>
-    </div><br>
+            <div>
+                <label for="name">Name:</label><br>
+                <input placeholder="Your name" type="text" id="name" name="name" required>
+            </div><br>
 
-    <div>
-      <label for="message">Message:</label><br>
-      <textarea placeholder="Your message" id="message" name="message" rows="5" required></textarea>
-    </div><br>
+            <div>
+                <label for="email">Email:</label><br>
+                <input placeholder="Your email" type="email" id="email" name="email" required>
+            </div><br>
 
-    <button type="submit">Send</button>
-  </form>
+            <div>
+                <label for="message">Message:</label><br>
+                <textarea placeholder="Your message" id="message" name="message" rows="5" required></textarea>
+            </div><br>
+
+            <button type="submit">Send</button>
+        </form>
     </section>
     <!-- Project Section-->
     <section id="projectsSection" class="page-section">
         <h2>My Projects</h2>
         <p>on developing</p>
+
+        <h2>Certificates</h2>
+        <div class="certificate">
+            <img src="Data Center and Network Infrastrature.png" alt="Data Center and Network Infrastrature">
+            <img src="Basic Networking.png" alt="Basic Networking">
+            <img src="BOSH.jpg" alt="BOSH">
+        </div>
+        <div class="certificate">
+            <img src="Cyber Crime Law.png" alt="Cyber Crime Law">
+            <img src="Cyber Security Threat.JPG" alt="Cyber Security Threat">
+            <img src="Data Analytics Python.jpg" alt="Data Analytics Python">
+        </div>
+        <div class="certificate">
+            <img src="SemiConductor Secrets.png" alt="SemiConductor Secrets">
+            <img src="Git Introduction.png" alt="Git Introduction">
+            <img src="Future of Machine Learning.png" alt="Future of Machine Learning">
+        </div>
+        
+
     </section>
     <!-- About Section-->
     <section id="aboutSection" class="page-section">
@@ -90,11 +109,11 @@
 
         <h1 class="typewriter dark-mode">Kurt Decena</h1>
         <div class="content-wrapper">
-            <img src="barong Kurt.jpg" alt="anime" class="img">
+            <img src="barong Kurt.jpg" alt="anime" class="profilepic">
             <a href="IT-Kurt-Decena.pdf" download>
                 <button>Resume</button>
             </a>
-            
+
 
             <div class="frontpage">
                 <p style="font-size: 24px">I am passionate about technology and love to learn more about Embedded
@@ -140,7 +159,7 @@ return 0;
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('show');
             if (navLinks.classList.contains('show')) {
-                menuToggle.textContent = '✖'; // change to close icon
+                menuToggle.textContent = 'x'; // change to close icon
             } else {
                 menuToggle.textContent = '☰'; // change back to hamburger
             }
@@ -177,6 +196,27 @@ return 0;
                 // Hide menu after click (mobile UX)
                 navLinks.classList.remove('show');
                 menuToggle.textContent = '☰';
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll(".certificate img");
+
+            images.forEach((img) => {
+                img.addEventListener("click", function (e) {
+                    e.stopPropagation(); // prevent it from triggering the document click
+                    // Remove enlarged from other images
+                    images.forEach(i => {
+                        if (i !== img) i.classList.remove("enlarged");
+                    });
+                    // Toggle enlarged
+                    img.classList.toggle("enlarged");
+                });
+            });
+
+            // Click outside to close enlarged image
+            document.addEventListener("click", function () {
+                images.forEach(img => img.classList.remove("enlarged"));
             });
         });
     </script>
