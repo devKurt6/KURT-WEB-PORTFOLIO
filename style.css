@@ -178,7 +178,7 @@ li a:hover {
 .profilepic {
   float: left;
   clip-path: circle(40%);
-  width: 500px;
+  width: 400px;
   /* Adjust as needed */
   height: auto;
   /* Maintains aspect ratio */
