@@ -184,6 +184,7 @@ li a:hover {
   /* Maintains aspect ratio */
 }
 
+
 /* Certificate image aspect ratio */
 .certificate {
   text-align: center;
@@ -202,13 +203,19 @@ li a:hover {
 
 /* On hover, scale up and change width */
 .certificate img:hover {
-  width: 50%;
+  width: 25%;
   transform: scale(1.05);
   /* optional slight zoom-in effect */
   z-index: 1;
   /* bring to front if overlapping */
   position: relative;
 }
+.certificate img.enlarged {
+    width: 80%;
+    transform: scale(1.05);
+    z-index: 1;
+    position: relative;
+  }
 .certificate img.enlarged,
 .certificate img:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
@@ -317,7 +324,14 @@ form button {
 
   }
 
-
+.profilepic {
+  float: left;
+  clip-path: circle(40%);
+  width: 400px;
+  /* Adjust as needed */
+  height: auto;
+  /* Maintains aspect ratio */
+}
 
 
   .title,
@@ -430,5 +444,5 @@ form button {
     z-index: 1;
     position: relative;
   }
-  
+
 }
