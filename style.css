@@ -304,6 +304,28 @@ form button {
   cursor: pointer;
 }
 
+svg{
+  height:50px;
+}
+svg.nightmodeicon{
+  height:30px;
+}
+body.dark-mode button.nightmodeicon{
+background-color: #f8f6f600;
+}
+body.dark-mode svg.nightmodeicon{
+color:white;
+}
+
+button.nightmodeicon{
+  margin-top: 10px;
+  border-radius: 10px;
+}
+button.nightmodeicon:hover{
+  background-color: #1f1f1f;
+  color: #e2a216;
+
+}
 
 @media (max-width: 768px) {
   body {
