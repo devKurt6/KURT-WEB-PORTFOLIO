@@ -321,6 +321,15 @@ button.nightmodeicon{
   margin-top: 10px;
   border-radius: 10px;
 }
+
+.icon-link{
+  color: inherit;
+  text-decoration: none;
+}
+.icon-link svg:hover{
+  color: rgb(22, 144, 192);
+}
+
 button.nightmodeicon:hover{
   background-color: #1f1f1f;
   color: #e2a216;
