@@ -489,8 +489,7 @@ button.nightmodeicon:hover{
   max-width: 700px;
   padding: 20px;
   border-radius: 15px;
-  background-color: #f3f3f300;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  
 }
 
 body.dark-mode .project-card {
