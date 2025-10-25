@@ -84,15 +84,28 @@
     </section>
     <!-- Project Section-->
     <section id="projectsSection" class="page-section">
-        <h2>My Projects</h2>
+        <h1>My Projects</h1>
         <p>ongoing developing</p>
 
-        <div class="project-video">
-            
+        <div class="project-card">
+            <h4>
+                Plate Number Recognition
+                <button class="toggleVideoBtn">▶ Watch</button>
+            </h4>
 
-            <iframe width="460" height="315" src="https://www.youtube.com/embed/xHOkf1lmXvY?si=wtXQt8epRBL-RHYk" title="Plate Number Recognition" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p>Utilizing YOLO for object detection and Flask for Web application.</p>
+            <img src="Basic Networking.png" alt="Basic Networking" class="project-thumbnail">
+            <p>Utilizing YOLO for object detection and Flask for Web application.</p>
+
+            <div class="project-video" style="display: none;">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/xHOkf1lmXvY?si=wtXQt8epRBL-RHYk"
+                    title="Plate Number Recognition" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
+
+
 
         <br>
         <br>
@@ -188,78 +201,9 @@ return 0;
     <section>
 
     </section>
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-            if (navLinks.classList.contains('show')) {
-                menuToggle.textContent = 'x'; // change to close icon
-            } else {
-                menuToggle.textContent = '☰'; // change back to hamburger
-            }
-        });
-
-        document.getElementById('darkModeToggle').addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                document.body.classList.add('dark-mode');
-            }
-        });
-
-
-        // Navigation click logic to switch sections
-        const links = document.querySelectorAll('.nav-links a');
-        const sections = document.querySelectorAll('.page-section');
-
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.textContent.trim().toLowerCase() + 'Section';
-
-                sections.forEach(sec => sec.classList.remove('active'));
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.classList.add('active');
-                }
-
-                // Hide menu after click (mobile UX)
-                navLinks.classList.remove('show');
-                menuToggle.textContent = '☰';
-            });
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const images = document.querySelectorAll(".certificate img");
-
-            images.forEach((img) => {
-                img.addEventListener("click", function (e) {
-                    e.stopPropagation(); // prevent it from triggering the document click
-                    // Remove enlarged from other images
-                    images.forEach(i => {
-                        if (i !== img) i.classList.remove("enlarged");
-                    });
-                    // Toggle enlarged
-                    img.classList.toggle("enlarged");
-                });
-            });
-
-            // Click outside to close enlarged image
-            document.addEventListener("click", function () {
-                images.forEach(img => img.classList.remove("enlarged"));
-            });
-        });
-
+     <script src="script.js">
 
     </script>
-
-
 </body>
 
 </html>
