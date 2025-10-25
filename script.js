@@ -60,13 +60,14 @@ document.addEventListener("DOMContentLoaded", () => {
         videoDiv.style.display = "block";
         thumbnail.style.display = "none";
         iframe.src = videoSrc;
-        button.textContent = "▲ Hide";
+        button.textContent = "Hide";
+        
       } else {
         // Hide video, show thumbnail and stop playback
         videoDiv.style.display = "none";
         thumbnail.style.display = "block";
         iframe.src = "";
-        button.textContent = "▶ Watch";
+        button.textContent = "Watch";
       }
     });
   });
