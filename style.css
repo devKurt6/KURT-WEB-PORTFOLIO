@@ -9,6 +9,39 @@ body.dark-mode {
   color: #f0f0f0;
 }
 
+#decrypt-name {
+  font-family: 'Courier New', monospace;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000; /* Light mode - black text */
+  letter-spacing: 2px;
+  text-align: center;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+/* 🌙 Dark mode style */
+body.dark-mode #decrypt-name {
+  color: #00ffea; /* neon cyan */
+  text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+}
+
+footer{
+  text-align: left;
+  margin-left: 100px;
+  
+  
+}
+
+.two-column-section .infoDetails{
+  text-align: center;
+  padding-right: 500px;
+  margin: auto;
+}
+
+.infoDetails h1{
+  margin-top: 350px;
+}
 .title {
   font-size: 2em;
   text-align: center;
@@ -21,6 +54,7 @@ body.dark-mode {
 }
 
 .content-wrapper {
+  margin-top: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -180,7 +214,8 @@ li a:hover {
 
 .profilepic {
   float: left;
-  clip-path: circle(40%);
+  
+  clip-path: circle(30%);
   width: 500px;
   /* Adjust as needed */
   height: auto;
@@ -310,11 +345,13 @@ a button {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  
 }
 
 body.dark-mode a button {
   background-color: #eb2727;
   color: #f0f0f0;
+  margin: auto;
 }
 
 form input,
@@ -580,6 +617,8 @@ body.dark-mode .project-card {
   }
 
   .content-wrapper {
+
+    margin-top: 200px;
     flex-direction: column;
     align-items: center;
 
@@ -622,7 +661,7 @@ body.dark-mode .project-card {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     
 
     margin-top: 10px;
@@ -630,7 +669,9 @@ body.dark-mode .project-card {
   }
 
   .nav-links.show {
+    align-items: left;
     opacity: 1;
+    
     max-height: 500px;
     /* large enough to show full menu */
   }
@@ -679,6 +720,19 @@ body.dark-mode .project-card {
     z-index: 1;
     position: relative;
   }
+.two-column-section {
+  display: block;
+  gap: 2rem;
+  /* space between columns */
+}
+.infoDetails h1{
+  margin-top: 0px;
+}
 
+.two-column-section .infoDetails{
+ 
+  padding-right:0px;
+  
+}
 }
 

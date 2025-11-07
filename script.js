@@ -145,3 +145,87 @@ const menuToggle = document.getElementById('menuToggle');
 
         ///////////////////dark mode function and other 
 
+/*************************FOOTER YEAR*/
+// document.getElementById("year").textContent = new Date().getFullYear();
+
+// function adjustFooter() {
+//     const footer = document.querySelector("footer");
+//     const bodyHeight = document.body.scrollHeight; // total content height
+//     const windowHeight = window.innerHeight;       // visible screen height
+
+//     if (bodyHeight < windowHeight) {
+//       footer.style.position = "absolute";
+//       footer.style.bottom = "0";
+//       footer.style.left = "0";
+//       footer.style.width = "100%";
+//     } else {
+//       footer.style.position = "static"; // normal flow if page is long
+//     }
+//   }
+
+//   // Run on page load and resize
+//   window.addEventListener("load", adjustFooter);
+//   window.addEventListener("resize", adjustFooter);
+
+/*******Encryption animation  */
+const element = document.getElementById("decrypt-name");
+const nameText = "Kurt Decena";
+const chars = "!@#$%^&*()_+-={}[]<>?/|~0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+// ----------------------
+// 🔧 Adjustable settings
+// ----------------------
+let frameSpeed = 60;      // speed of animation (ms per frame)
+let charChangeRate = 0.2; // how many letters change per frame (0.3 = moderate)
+let pauseRealName = 3000; // pause when showing "Kurt Decena"
+let pauseEncrypted = 1000; // pause when showing random text
+// ----------------------
+
+let isEncrypting = true;
+let displayText = nameText.split("");
+let interval;
+
+const randomChar = () => chars[Math.floor(Math.random() * chars.length)];
+
+function animate() {
+  let completed = true;
+
+  if (isEncrypting) {
+    // Encrypt letter by letter
+    for (let i = 0; i < displayText.length; i++) {
+      if (Math.random() < charChangeRate) {
+        displayText[i] = randomChar();
+        completed = false;
+      }
+    }
+  } else {
+    // Decrypt letter by letter
+    for (let i = 0; i < nameText.length; i++) {
+      if (displayText[i] !== nameText[i]) {
+        if (Math.random() < charChangeRate) {
+          displayText[i] = nameText[i];
+        } else {
+          displayText[i] = randomChar();
+        }
+        completed = false;
+      }
+    }
+  }
+
+  element.textContent = displayText.join("");
+
+  if (completed) {
+    clearInterval(interval);
+    setTimeout(() => {
+      isEncrypting = !isEncrypting;
+      interval = setInterval(animate, frameSpeed);
+    }, isEncrypting ? pauseEncrypted : pauseRealName);
+    // 👆 1s pause for encrypted, 3s pause for real name
+  }
+}
+
+function startAnimation() {
+  interval = setInterval(animate, frameSpeed);
+}
+
+startAnimation();
