@@ -521,10 +521,11 @@ button.nightmodeicon:hover{
 
 
 .project-card {
+  display: inline-block;
   text-align: center;
   margin: 0;
   max-width: 700px;
-  padding: 20px;
+  padding: 10px;
   border-radius: 15px;
   
 }
