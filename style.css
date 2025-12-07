@@ -13,7 +13,8 @@ body.dark-mode {
   font-family: 'Courier New', monospace;
   font-size: 2.5rem;
   font-weight: bold;
-  color: #000; /* Light mode - black text */
+  color: #000;
+  /* Light mode - black text */
   letter-spacing: 2px;
   text-align: center;
   user-select: none;
@@ -22,35 +23,59 @@ body.dark-mode {
 
 /* 🌙 Dark mode style */
 body.dark-mode #decrypt-name {
-  color: #00ffea; /* neon cyan */
+  color: #00ffea;
+  /* neon cyan */
   text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
 }
 
-footer{
+footer {
   text-align: left;
   margin-left: 100px;
-  
-  
+
+
 }
 
-.two-column-section .infoDetails{
+a {
+  color: inherit;
+  /* uses the color of the icon or parent element */
+  text-decoration: none;
+  /* removes underline */
+}
+
+.fa-square-github,
+.fa-square-facebook,
+.fa-linkedin,
+.fa-message {
+  font-size: 30px;
+  padding: 5px;
+}
+.iconProfile{
+  color: inherit;
+}
+
+.two-column-section .infoDetails {
   text-align: center;
   padding-right: 500px;
   margin: auto;
 }
 
-.infoDetails h1{
+/* .infoDetails h1 {
   margin-top: 350px;
-}
+} */
+
 .title {
   font-size: 2em;
   text-align: center;
   margin: 20px;
 }
+
 .container {
-  max-width: 1200px;   /* keeps content from going too wide */
-  margin: 0 auto;      /* centers it */
-  padding: 0 20px;     /* small side padding */
+  max-width: 1200px;
+  /* keeps content from going too wide */
+  margin: 0 auto;
+  /* centers it */
+  padding: 0 20px;
+  /* small side padding */
 }
 
 .content-wrapper {
@@ -102,14 +127,110 @@ footer{
   display: none;
 }
 
+.centerSection {
+
+  flex-direction: column;
+  align-items: center;
+}
+
 .page-section.active {
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+
   padding: 20px;
 }
 
+/* 🔘 Floating Email Icon */
+.email-icon {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  /* background: #007bff; */
+  color: inherit;
+  font-size: 26px;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.email-icon:hover {
+  transform: scale(1.1);
+  background: #005fcc;
+}
+
+/* 🔳 Popup Background */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 📨 Popup Form (no container box style) */
+form {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 350px;
+  position: relative;
+  animation: fadeIn 0.3s;
+  font-family: Poppins, sans-serif;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+form button:hover {
+  background: #005fcc;
+}
+
+/* ❌ Close Button */
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Smooth Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 
 .typewriter {
@@ -177,10 +298,12 @@ body.dark-mode .menu-toggle {
 
 .header-row {
   display: flex;
-  justify-content: space-between; /* pushes text to the left & logo to the right */
+  justify-content: space-between;
+  /* pushes text to the left & logo to the right */
   align-items: center;
 }
-.biphlogo{
+
+.biphlogo {
   width: 200px;
   height: auto;
 }
@@ -215,19 +338,24 @@ body.dark-mode li a {
 li a:hover {
   font-weight: bold;
   color: darkblue;
-  
+
   border-radius: 5px;
   /* optional for rounded corners */
 }
 
+.profile {
+  margin-bottom: 1000px;
+}
+
 .profilepic {
   float: left;
-  
-  clip-path: circle(30%);
+  text-align: center;
+  clip-path: circle(50%);
   width: 500px;
   /* Adjust as needed */
   height: auto;
   /* Maintains aspect ratio */
+  margin-right: 200px;
 }
 
 
@@ -244,7 +372,8 @@ li a:hover {
   border-radius: 20px;
   transition: transform 0.3s ease, width 0.3s ease;
   /* smooth animation */
-  box-shadow: 0 4px 12px rgba(173, 49, 49, 0.3); /* ← shadow */
+  box-shadow: 0 4px 12px rgba(173, 49, 49, 0.3);
+  /* ← shadow */
 }
 
 /* On hover, scale up and change width */
@@ -256,12 +385,14 @@ li a:hover {
   /* bring to front if overlapping */
   position: relative;
 }
+
 .certificate img.enlarged {
-    width: 80%;
-    transform: scale(1.05);
-    z-index: 1;
-    position: relative;
-  }
+  width: 80%;
+  transform: scale(1.05);
+  z-index: 1;
+  position: relative;
+}
+
 .certificate img.enlarged,
 .certificate img:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
@@ -283,7 +414,8 @@ li a:hover {
 
 /* Base navbar link styles */
 .navbar li a {
-  position: relative;   /* needed for the pseudo-element */
+  position: relative;
+  /* needed for the pseudo-element */
   text-decoration: none;
   color: black;
   font-weight: normal;
@@ -302,10 +434,13 @@ body.dark-mode .navbar li a {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 5px; /* adjust distance from text */
+  bottom: 5px;
+  /* adjust distance from text */
   width: 0;
-  height: 2px; /* thickness of line */
-  background-color: #1c3c32; /* line color */
+  height: 2px;
+  /* thickness of line */
+  background-color: #1c3c32;
+  /* line color */
   transition: width 0.3s ease;
 }
 
@@ -353,7 +488,7 @@ a button {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  
+
 }
 
 body.dark-mode a button {
@@ -380,33 +515,37 @@ form button {
   cursor: pointer;
 }
 
-svg{
-  height:50px;
-}
-svg.nightmodeicon{
-  height:30px;
-}
-body.dark-mode button.nightmodeicon{
-background-color: #f8f6f600;
-}
-body.dark-mode svg.nightmodeicon{
-color:white;
+svg {
+  height: 50px;
 }
 
-button.nightmodeicon{
+svg.nightmodeicon {
+  height: 30px;
+}
+
+body.dark-mode button.nightmodeicon {
+  background-color: #f8f6f600;
+}
+
+body.dark-mode svg.nightmodeicon {
+  color: white;
+}
+
+button.nightmodeicon {
   margin-top: 10px;
   border-radius: 10px;
 }
 
-.icon-link{
+.icon-link {
   color: inherit;
   text-decoration: none;
 }
-.icon-link svg:hover{
+
+.icon-link svg:hover {
   color: rgb(22, 144, 192);
 }
 
-button.nightmodeicon:hover{
+button.nightmodeicon:hover {
   background-color: #1f1f1f;
   color: #e2a216;
 
@@ -478,8 +617,8 @@ button.nightmodeicon:hover{
 }
 
 .slide-in-elliptic-top-fwd {
-	-webkit-animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 /* ----------------------------------------------
@@ -497,37 +636,40 @@ button.nightmodeicon:hover{
 @-webkit-keyframes slide-in-elliptic-top-fwd {
   0% {
     -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
-            transform: translateY(-600px) rotateX(-30deg) scale(0);
+    transform: translateY(-600px) rotateX(-30deg) scale(0);
     -webkit-transform-origin: 50% 100%;
-            transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
     opacity: 0;
   }
+
   100% {
     -webkit-transform: translateY(0) rotateX(0) scale(1);
-            transform: translateY(0) rotateX(0) scale(1);
+    transform: translateY(0) rotateX(0) scale(1);
     -webkit-transform-origin: 50% 1400px;
-            transform-origin: 50% 1400px;
-    opacity: 1;
-  }
-}
-@keyframes slide-in-elliptic-top-fwd {
-  0% {
-    -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
-            transform: translateY(-600px) rotateX(-30deg) scale(0);
-    -webkit-transform-origin: 50% 100%;
-            transform-origin: 50% 100%;
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0) rotateX(0) scale(1);
-            transform: translateY(0) rotateX(0) scale(1);
-    -webkit-transform-origin: 50% 1400px;
-            transform-origin: 50% 1400px;
+    transform-origin: 50% 1400px;
     opacity: 1;
   }
 }
 
-.list{
+@keyframes slide-in-elliptic-top-fwd {
+  0% {
+    -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+    transform: translateY(-600px) rotateX(-30deg) scale(0);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0) rotateX(0) scale(1);
+    transform: translateY(0) rotateX(0) scale(1);
+    -webkit-transform-origin: 50% 1400px;
+    transform-origin: 50% 1400px;
+    opacity: 1;
+  }
+}
+
+.list {
   display: block;
 }
 
@@ -538,7 +680,7 @@ button.nightmodeicon:hover{
   max-width: 700px;
   padding: 10px;
   border-radius: 15px;
-  
+
 }
 
 body.dark-mode .project-card {
@@ -558,7 +700,7 @@ body.dark-mode .project-card {
   border-radius: 12px;
   margin-top: 10px;
   margin: auto;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .project-card button.toggleVideoBtn {
@@ -581,7 +723,7 @@ body.dark-mode .project-card {
   max-width: 600px;
   border-radius: 12px;
   margin-top: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -607,17 +749,17 @@ body.dark-mode .project-card {
 
   body.dark-mode nav {
     background-color: #1f1f1f !important
-    
   }
 
-.profilepic {
-  float: left;
-  clip-path: circle(40%);
-  width: 300px;
-  /* Adjust as needed */
-  height: auto;
-  /* Maintains aspect ratio */
-}
+  .profilepic {
+    clip-path: circle(40%);
+    width: 400px;
+    height: auto;
+    display: inline-block;       /* allows margin auto to work */
+    margin: 0 auto;       /* centers horizontally */
+    margin-left: 30px;
+    text-align: center;
+  }
 
 
   .title,
@@ -674,7 +816,7 @@ body.dark-mode .project-card {
     flex-wrap: wrap;
     align-items: center;
     justify-content: left;
-    
+
 
     margin-top: 10px;
     transition: max-height 0.3s ease, opacity 0.3s ease;
@@ -683,7 +825,7 @@ body.dark-mode .project-card {
   .nav-links.show {
     align-items: left;
     opacity: 1;
-    
+
     max-height: 500px;
     /* large enough to show full menu */
   }
@@ -732,19 +874,29 @@ body.dark-mode .project-card {
     z-index: 1;
     position: relative;
   }
-.two-column-section {
+
+  .two-column-section {
+    display: block;
+    gap: 2rem;
+    /* space between columns */
+  }
+
+  .infoDetails h1 {
+    margin-top: 0px;
+  }
+
+
+
+
+  .two-column-section .infoDetails {
+
+    padding-right: 0px;
+
+  }
+  .header-row {
   display: block;
-  gap: 2rem;
-  /* space between columns */
-}
-.infoDetails h1{
-  margin-top: 0px;
-}
-
-.two-column-section .infoDetails{
- 
-  padding-right:0px;
-  
+  justify-content: space-between;
+  /* pushes text to the left & logo to the right */
+  align-items: center;
 }
 }
-
