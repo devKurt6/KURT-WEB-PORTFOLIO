@@ -755,7 +755,7 @@ body.dark-mode .project-card {
 
   .profilepic {
     clip-path: circle(40%);
-    width: 400px;
+    width: 350px;
     height: auto;
     display: inline-block;       /* allows margin auto to work */
     margin: 0;       /* centers horizontally */
