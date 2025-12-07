@@ -172,6 +172,7 @@ a {
   display: none;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
 /* 📨 Popup Form (no container box style) */
@@ -757,7 +758,7 @@ body.dark-mode .project-card {
     height: auto;
     display: inline-block;       /* allows margin auto to work */
     margin: 0 auto;       /* centers horizontally */
-    margin-left: 30px;
+    
     text-align: center;
   }
 
