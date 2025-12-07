@@ -757,7 +757,7 @@ body.dark-mode .project-card {
     width: 400px;
     height: auto;
     display: inline-block;       /* allows margin auto to work */
-    margin: 0 auto;       /* centers horizontally */
+    margin: 0;       /* centers horizontally */
     
     text-align: center;
   }
