@@ -49,6 +49,10 @@ a {
   font-size: 30px;
   padding: 5px;
 }
+
+.fa-download{
+  font-size: 40px;
+}
 .iconProfile{
   color: inherit;
 }
@@ -157,9 +161,14 @@ a {
   z-index: 1500;
 }
 
+/* 🔘 Floating Email Icon */
+body.dark-mode .email-icon {
+  box-shadow: 0 0 12px rgb(255, 255, 255);
+}
+
 .email-icon:hover {
   transform: scale(1.1);
-  background: #005fcc;
+  background: #529aec;
 }
 
 /* 🔳 Popup Background */
@@ -176,9 +185,20 @@ a {
   z-index: 1000;
 }
 
+
 /* 📨 Popup Form (no container box style) */
 form {
   background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 350px;
+  position: relative;
+  animation: fadeIn 0.3s;
+  font-family: Poppins, sans-serif;
+}
+
+body.dark-mode form {
+  background: rgb(107, 107, 107);
   padding: 25px;
   border-radius: 10px;
   width: 350px;
@@ -521,15 +541,15 @@ svg {
   height: 50px;
 }
 
-svg.nightmodeicon {
+.nightmodeicon {
   height: 30px;
 }
 
 body.dark-mode button.nightmodeicon {
-  background-color: #f8f6f600;
+  background-color: inherit;
 }
 
-body.dark-mode svg.nightmodeicon {
+body.dark-mode .nightmodeicon {
   color: white;
 }
 

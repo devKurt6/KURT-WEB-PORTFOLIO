@@ -230,3 +230,17 @@ document.getElementById("contactIcon").onclick = () =>
 // CLOSE POPUP
 document.getElementById("closeBtn").onclick = () =>
   document.getElementById("popupForm").style.display = "none";
+
+
+document.getElementById("darkModeToggle").addEventListener("click", function() {
+    const icon = document.getElementById("toggleIcon");
+
+    // toggle icon class
+    if(icon.classList.contains("fa-toggle-off")){
+        icon.classList.remove("fa-toggle-off");
+        icon.classList.add("fa-toggle-on");
+    } else {
+        icon.classList.remove("fa-toggle-on");
+        icon.classList.add("fa-toggle-off");
+    }
+});
