@@ -53,6 +53,10 @@ a {
 .fa-download{
   font-size: 40px;
 }
+.fa-toggle-off, .fa-toggle-on{
+  font-size: 35px;
+}
+
 .iconProfile{
   color: inherit;
 }
@@ -555,7 +559,9 @@ body.dark-mode .nightmodeicon {
 
 button.nightmodeicon {
   margin-top: 10px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
+  border: none;
+  background-color: inherit;
 }
 
 .icon-link {
@@ -563,12 +569,12 @@ button.nightmodeicon {
   text-decoration: none;
 }
 
-.icon-link svg:hover {
+.icon-link:hover {
   color: rgb(22, 144, 192);
 }
 
 button.nightmodeicon:hover {
-  background-color: #1f1f1f;
+  background-color: inherit;
   color: #e2a216;
 
 }
@@ -867,7 +873,7 @@ body.dark-mode .project-card {
 
   .nav-links a,
   .nav-links button {
-    padding: 8px 12px;
+    padding: 0px 5px;
     display: inline-block;
   }
 
