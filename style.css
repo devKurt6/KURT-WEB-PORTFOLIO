@@ -716,9 +716,10 @@ body.dark-mode .project-card {
 }
 
 .project-card h4 {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
   gap: 10px;
 }
 
