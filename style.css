@@ -715,6 +715,8 @@ body.dark-mode .project-card {
   background-color: #00000000;
 }
 
+
+
 .project-card h4 {
   display: block;
   justify-content: center;
@@ -733,19 +735,29 @@ body.dark-mode .project-card {
 }
 
 .project-card button.toggleVideoBtn {
-  background-color: #4CAF50;
-  color: white;
+  background-color: transparent;
+  color: inherit;
   border: none;
   padding: 6px 12px;
   font-size: 14px;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: underline; /* ✅ underline text */
+  font-size: .7rem;
+}
+
+
+
+body.darkmode .project-card button.toggleVideoBtn{
+  background-color: white;
+  color: black;
 }
 
 .project-card button.toggleVideoBtn:hover {
-  background-color: #388E3C;
+  color: red;
 }
+
 
 .project-video iframe {
   width: 90%;
