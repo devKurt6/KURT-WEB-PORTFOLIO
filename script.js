@@ -1,246 +1,371 @@
-
-/************************** */
-document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll(".zoom-in");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      entry.target.classList.remove("animate-zoom-in");
-      entry.target.classList.remove("animate-zoom-out");
-      if (entry.isIntersecting) {
-        // Add animation when visible
-
-        entry.target.classList.add("animate-zoom-in");
-      } else {
-        // Remove animation when hidden (so it can replay)
-        entry.target.classList.add("animate-zoom-out");
-      }
-    });
-  }, { threshold: 0.3 }); // Trigger at 20% visibility
-
-  images.forEach(img => observer.observe(img));
-});
-
-/********************************************************************** */
-document.addEventListener("DOMContentLoaded", () => {
-  const textElements = document.querySelectorAll(".slide-in-elliptic-top-fwd");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      entry.target.classList.remove("bounce-top");
-
-      if (entry.isIntersecting) {
-        // Add animation when visible
-
-        entry.target.classList.add("bounce-top");
-      } else {
-        // Remove animation when hidden (so it can replay)
-        entry.target.classList.remove("bounce-top");
-      }
-    });
-  }, { threshold: 0.3 }); // Trigger at 20% visibility
-
-  textElements.forEach(txt => observer.observe(txt));
-});
-
-//////////////////////////////// Watch Project youtube
-document.addEventListener("DOMContentLoaded", () => {
-  const projectCards = document.querySelectorAll(".project-card");
-
-  projectCards.forEach(card => {
-    const button = card.querySelector(".toggleVideoBtn");
-    const videoDiv = card.querySelector(".project-video");
-    const thumbnail = card.querySelector(".project-thumbnail");
-    const iframe = videoDiv.querySelector("iframe");
-    const videoSrc = iframe.src; // store original src
-
-    button.addEventListener("click", () => {
-      if (videoDiv.style.display === "none") {
-        // Show video, hide thumbnail
-        videoDiv.style.display = "block";
-        thumbnail.style.display = "none";
-        iframe.src = videoSrc;
-        button.textContent = "Hide";
-
-      } else {
-        // Hide video, show thumbnail and stop playback
-        videoDiv.style.display = "none";
-        thumbnail.style.display = "block";
-        iframe.src = "";
-        button.textContent = "Watch";
-      }
-    });
-  });
-});
-
-
-////////////////////////////////////////////////
-
+// ============================================
+// NAVIGATION & MENU TOGGLE
+// ============================================
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
+const navbar = document.getElementById('navbar');
 
+// Mobile menu toggle
 menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-  if (navLinks.classList.contains('show')) {
-    menuToggle.textContent = 'x'; // change to close icon
-  } else {
-    menuToggle.textContent = '☰'; // change back to hamburger
+  navLinks.classList.toggle('active');
+  menuToggle.classList.toggle('active');
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!navbar.contains(e.target) && navLinks.classList.contains('active')) {
+    navLinks.classList.remove('active');
+    menuToggle.classList.remove('active');
   }
 });
 
-document.getElementById('darkModeToggle').addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-});
+// ============================================
+// DARK MODE TOGGLE
+// ============================================
+const darkModeToggle = document.getElementById('darkModeToggle');
+const darkModeIcon = darkModeToggle.querySelector('i');
 
-window.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-  }
-});
-
-
-// Navigation click logic to switch sections
-const links = document.querySelectorAll('.nav-links a');
-const sections = document.querySelectorAll('.page-section');
-
-links.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const targetId = link.textContent.trim().toLowerCase() + 'Section';
-
-    sections.forEach(sec => sec.classList.remove('active'));
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-      targetSection.classList.add('active');
-    }
-
-    // Hide menu after click (mobile UX)
-    navLinks.classList.remove('show');
-    menuToggle.textContent = '☰';
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const images = document.querySelectorAll(".certificate img");
-
-  images.forEach((img) => {
-    img.addEventListener("click", function (e) {
-      e.stopPropagation(); // prevent it from triggering the document click
-      // Remove enlarged from other images
-      images.forEach(i => {
-        if (i !== img) i.classList.remove("enlarged");
-      });
-      // Toggle enlarged
-      img.classList.toggle("enlarged");
-    });
-  });
-
-  // Click outside to close enlarged image
-  document.addEventListener("click", function () {
-    images.forEach(img => img.classList.remove("enlarged"));
-  });
-});
-
-///////////////////dark mode function and other 
-
-/*************************FOOTER YEAR*/
-// document.getElementById("year").textContent = new Date().getFullYear();
-
-// function adjustFooter() {
-//     const footer = document.querySelector("footer");
-//     const bodyHeight = document.body.scrollHeight; // total content height
-//     const windowHeight = window.innerHeight;       // visible screen height
-
-//     if (bodyHeight < windowHeight) {
-//       footer.style.position = "absolute";
-//       footer.style.bottom = "0";
-//       footer.style.left = "0";
-//       footer.style.width = "100%";
-//     } else {
-//       footer.style.position = "static"; // normal flow if page is long
-//     }
-//   }
-
-//   // Run on page load and resize
-//   window.addEventListener("load", adjustFooter);
-//   window.addEventListener("resize", adjustFooter);
-
-/******* 🔐 Encryption animation  *********/
-const element = document.getElementById("decrypt-name"); // second line only
-const nameText = "Kurt Decena"; // animate only this
-
-// characters used for scrambling
-const chars = "!@#$%^&*()_+-={}[]<>?/|~0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-
-// ----------------------
-// 🔧 Adjustable settings
-// ----------------------
-let frameSpeed = 60;       // animation speed
-let charChangeRate = 0.2;  // scrambling intensity
-let pauseRealName = 3000;  // pause when showing real name
-let pauseEncrypted = 1000; // pause when scrambled
-// ----------------------
-
-let isEncrypting = true;
-let displayText = nameText.split("");
-let interval;
-
-const randomChar = () => chars[Math.floor(Math.random() * chars.length)];
-
-function animate() {
-    let completed = true;
-
-    if (isEncrypting) {
-        for (let i = 0; i < displayText.length; i++) {
-            if (Math.random() < charChangeRate) {
-                displayText[i] = randomChar();
-                completed = false;
-            }
-        }
-    } else {
-        for (let i = 0; i < nameText.length; i++) {
-            if (displayText[i] !== nameText[i]) {
-                displayText[i] = (Math.random() < charChangeRate) ? randomChar() : nameText[i];
-                completed = false;
-            }
-        }
-    }
-
-    element.textContent = displayText.join("");
-
-    if (completed) {
-        clearInterval(interval);
-        setTimeout(() => {
-            isEncrypting = !isEncrypting;
-            interval = setInterval(animate, frameSpeed);
-        }, isEncrypting ? pauseEncrypted : pauseRealName);
-    }
+// Load saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  document.body.classList.add('dark-mode');
+  darkModeIcon.classList.remove('fa-moon');
+  darkModeIcon.classList.add('fa-sun');
 }
 
+// Toggle dark mode
+darkModeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  
+  const isDark = document.body.classList.contains('dark-mode');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  
+  // Update icon
+  if (isDark) {
+    darkModeIcon.classList.remove('fa-moon');
+    darkModeIcon.classList.add('fa-sun');
+  } else {
+    darkModeIcon.classList.remove('fa-sun');
+    darkModeIcon.classList.add('fa-moon');
+  }
+});
+
+// ============================================
+// SECTION NAVIGATION
+// ============================================
+const sections = document.querySelectorAll('.page-section');
+const navLinksAll = document.querySelectorAll('[data-section]');
+
+function showSection(sectionId) {
+  // Hide all sections
+  sections.forEach(section => section.classList.remove('active'));
+  
+  // Show target section
+  const targetSection = document.getElementById(sectionId);
+  if (targetSection) {
+    targetSection.classList.add('active');
+  }
+  
+  // Update active nav link
+  navLinksAll.forEach(link => {
+    const linkSection = link.getAttribute('data-section');
+    if (linkSection === sectionId) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+  
+  // Close mobile menu
+  navLinks.classList.remove('active');
+  menuToggle.classList.remove('active');
+  
+  // Scroll to top smoothly
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Add click listeners to all navigation links
+navLinksAll.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const sectionId = link.getAttribute('data-section');
+    showSection(sectionId);
+  });
+});
+
+// ============================================
+// FLOATING CONTACT BUTTON & POPUP
+// ============================================
+const contactIcon = document.getElementById('contactIcon');
+const popupForm = document.getElementById('popupForm');
+const closeBtn = document.getElementById('closeBtn');
+
+// Open popup
+contactIcon.addEventListener('click', () => {
+  popupForm.classList.add('active');
+  document.body.style.overflow = 'hidden'; // Prevent scrolling
+});
+
+// Close popup
+closeBtn.addEventListener('click', () => {
+  popupForm.classList.remove('active');
+  document.body.style.overflow = ''; // Restore scrolling
+});
+
+// Close popup when clicking overlay
+popupForm.addEventListener('click', (e) => {
+  if (e.target === popupForm) {
+    popupForm.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+
+// Close popup on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && popupForm.classList.contains('active')) {
+    popupForm.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+
+// ============================================
+// VIDEO MODAL
+// ============================================
+const videoModal = document.getElementById('videoModal');
+const videoFrame = document.getElementById('videoFrame');
+const videoCloseBtn = document.querySelector('.video-close-btn');
+const playButtons = document.querySelectorAll('.play-btn');
+
+// Open video modal
+playButtons.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const videoId = btn.getAttribute('data-video');
+    if (videoId) {
+      videoFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      videoModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+});
+
+// Close video modal
+function closeVideoModal() {
+  videoModal.classList.remove('active');
+  videoFrame.src = '';
+  document.body.style.overflow = '';
+}
+
+videoCloseBtn.addEventListener('click', closeVideoModal);
+
+videoModal.addEventListener('click', (e) => {
+  if (e.target === videoModal) {
+    closeVideoModal();
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+    closeVideoModal();
+  }
+});
+
+// ============================================
+// CERTIFICATE ENLARGEMENT
+// ============================================
+const certificateItems = document.querySelectorAll('.certificate-item');
+
+certificateItems.forEach(item => {
+  item.addEventListener('click', (e) => {
+    e.stopPropagation();
+    
+    // Close other enlarged certificates
+    certificateItems.forEach(otherItem => {
+      if (otherItem !== item) {
+        otherItem.classList.remove('enlarged');
+      }
+    });
+    
+    // Toggle current certificate
+    item.classList.toggle('enlarged');
+    
+    if (item.classList.contains('enlarged')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  });
+});
+
+// Close enlarged certificate when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.certificate-item')) {
+    certificateItems.forEach(item => {
+      item.classList.remove('enlarged');
+    });
+    document.body.style.overflow = '';
+  }
+});
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    certificateItems.forEach(item => {
+      item.classList.remove('enlarged');
+    });
+    document.body.style.overflow = '';
+  }
+});
+
+// ============================================
+// NAME ENCRYPTION ANIMATION
+// ============================================
+const nameElement = document.getElementById('decrypt-name');
+const realName = 'Kurt Decena';
+const chars = '!@#$%^&*()_+-={}[]<>?/|~0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+
+let displayText = realName.split('');
+let isEncrypting = false;
+let interval;
+
+// Settings
+const frameSpeed = 60;
+const charChangeRate = 0.2;
+const pauseRealName = 3000;
+const pauseEncrypted = 1000;
+
+function randomChar() {
+  return chars[Math.floor(Math.random() * chars.length)];
+}
+
+function animate() {
+  let completed = true;
+  
+  if (isEncrypting) {
+    // Scrambling phase
+    for (let i = 0; i < displayText.length; i++) {
+      if (Math.random() < charChangeRate) {
+        displayText[i] = randomChar();
+        completed = false;
+      }
+    }
+  } else {
+    // Revealing phase
+    for (let i = 0; i < realName.length; i++) {
+      if (displayText[i] !== realName[i]) {
+        displayText[i] = (Math.random() < charChangeRate) ? randomChar() : realName[i];
+        completed = false;
+      }
+    }
+  }
+  
+  nameElement.textContent = displayText.join('');
+  
+  if (completed) {
+    clearInterval(interval);
+    setTimeout(() => {
+      isEncrypting = !isEncrypting;
+      interval = setInterval(animate, frameSpeed);
+    }, isEncrypting ? pauseEncrypted : pauseRealName);
+  }
+}
+
+// Start animation
 interval = setInterval(animate, frameSpeed);
 
+// ============================================
+// INTERSECTION OBSERVER FOR ANIMATIONS
+// ============================================
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
 
-
-// OPEN POPUP
-document.getElementById("contactIcon").onclick = () =>
-  document.getElementById("popupForm").style.display = "flex";
-
-// CLOSE POPUP
-document.getElementById("closeBtn").onclick = () =>
-  document.getElementById("popupForm").style.display = "none";
-
-
-document.getElementById("darkModeToggle").addEventListener("click", function() {
-    const icon = document.getElementById("toggleIcon");
-
-    // toggle icon class
-    if(icon.classList.contains("fa-toggle-off")){
-        icon.classList.remove("fa-toggle-off");
-        icon.classList.add("fa-toggle-on");
-    } else {
-        icon.classList.remove("fa-toggle-on");
-        icon.classList.add("fa-toggle-off");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
     }
+  });
+}, observerOptions);
+
+// Observe animated elements
+document.addEventListener('DOMContentLoaded', () => {
+  const animatedElements = document.querySelectorAll('.project-card, .timeline-item, .certificate-item');
+  
+  animatedElements.forEach((el, index) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+    observer.observe(el);
+  });
 });
+
+// ============================================
+// SMOOTH SCROLL BEHAVIOR
+// ============================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// ============================================
+// NAVBAR SCROLL EFFECT
+// ============================================
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+  
+  if (currentScroll <= 0) {
+    navbar.style.boxShadow = 'none';
+  } else {
+    navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+  }
+  
+  lastScroll = currentScroll;
+});
+
+// ============================================
+// FORM HANDLING
+// ============================================
+const forms = document.querySelectorAll('form[name="contact"]');
+
+forms.forEach(form => {
+  form.addEventListener('submit', (e) => {
+    // Let Netlify handle the form submission
+    // You can add additional validation or analytics here if needed
+    console.log('Form submitted');
+  });
+});
+
+// ============================================
+// PERFORMANCE: LAZY LOADING IMAGES
+// ============================================
+if ('loading' in HTMLImageElement.prototype) {
+  const images = document.querySelectorAll('img[loading="lazy"]');
+  images.forEach(img => {
+    img.src = img.dataset.src;
+  });
+} else {
+  // Fallback for browsers that don't support lazy loading
+  const script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+  document.body.appendChild(script);
+}
+
+// ============================================
+// CONSOLE EASTER EGG
+// ============================================
+console.log('%c👋 Hello there!', 'font-size: 24px; font-weight: bold; color: #0066ff;');
+console.log('%cLooking for something? Check out my GitHub: https://github.com/devKurt6', 'font-size: 14px; color: #00d4ff;');
+console.log('%cInterested in working together? Let\'s connect!', 'font-size: 14px; color: #6c757d;');

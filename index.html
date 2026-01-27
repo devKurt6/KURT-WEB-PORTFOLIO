@@ -4,308 +4,432 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurt Decena</title>
+    <title>Kurt Decena - Software Developer</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-CNtk1nFuw+xuCm1XzNBS2yUQnQr0v5rx1LP7Or9mY1+wrX+tdqLF7jVKd/EsD0Jk"
-        crossorigin="anonymous"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <section>
-        <nav class="navbar">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Kurt Decena</a>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-
-            <!-- Hamburger Icon -->
-            <button class="menu-toggle" id="menuToggle">☰</button>
-
-            <!-- Navigation Links -->
             <ul class="nav-links" id="navLinks">
-                <!-- <li></li> -->
+                <li><a href="#" data-section="home">Home</a></li>
+                <li><a href="#" data-section="projects">Projects</a></li>
+                <li><a href="#" data-section="about">About</a></li>
+                <li><a href="#" data-section="contact">Contact</a></li>
                 <li>
-                    <button id="darkModeToggle" class="nightmodeicon">
-
-                        <i id="toggleIcon" class="fa-solid fa-toggle-off"></i><br>
-                        
+                    <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
                     </button>
                 </li>
-                <li><a href="#">Kurt</a></li>
-                <li><a href="#">News</a></li>
-                <!-- <li><a href="#">Contact</a></li> -->
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">About</a></li>
-
             </ul>
-        </nav>
-        <hr class="gray-line">
+        </div>
+    </nav>
 
-    </section>
+    <!-- Floating Contact Button -->
+    <button id="contactIcon" class="floating-contact" aria-label="Open contact form">
+        <i class="fa-solid fa-message"></i>
+    </button>
 
-    <!-- 🔹 Email ICON BUTTON -->
-    <div id="contactIcon" class="email-icon"><i class="fa-solid fa-message"></i></div>
-
-    <!-- 🔹 POPUP FORM (hidden by default) -->
-    <div id="popupForm" class="popup">
-        <form name="contact" method="POST" netlify action="success.html">
-            <input type="hidden" name="form-name" value="contact">
-
-            <h3>Contact Me</h3>
-
-            <label>Name</label>
-            <input type="text" name="name" placeholder="Your name" required>
-
-            <label>Email</label>
-            <input type="email" name="email" placeholder="Your email" required>
-
-            <label>Message</label>
-            <textarea name="message" placeholder="Your message..." rows="5" required></textarea>
-
-            <button type="submit">Send Message</button>
-            <span id="closeBtn" class="close-btn">✖</span>
-        </form>
+    <!-- Contact Popup Form -->
+    <div id="popupForm" class="popup-overlay">
+        <div class="popup-content">
+            <button id="closeBtn" class="close-btn" aria-label="Close form">
+                <i class="fas fa-times"></i>
+            </button>
+            <form name="contact" method="POST" netlify action="success.html">
+                <input type="hidden" name="form-name" value="contact">
+                <h3>Get In Touch</h3>
+                <div class="form-group">
+                    <label for="popup-name">Name</label>
+                    <input type="text" id="popup-name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="popup-email">Email</label>
+                    <input type="email" id="popup-email" name="email" placeholder="your.email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="popup-message">Message</label>
+                    <textarea id="popup-message" name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
     </div>
-    <!-- News Section-->
-    <section id="newsSection" class="page-section centerSection">
-        <h2>News</h2>
-        <p>Coming soon...</p>
 
-
-    </section>
-    <!-- Contact Section-->
-    <section id="contactSection" class="page-section">
-        <h2>Contact Me</h2>
-
-        <form class="contactForm" name="contact" method="POST" netlify action="success.html">
-            <input type="hidden" name="form-name" value="contact">
-
-            <div>
-                <label for="name">Name:</label><br>
-                <input placeholder="Your name" type="text" id="name" name="name" required>
-            </div><br>
-
-            <div>
-                <label for="email">Email:</label><br>
-                <input placeholder="Your email" type="email" id="email" name="email" required>
-            </div><br>
-
-            <div>
-                <label for="message">Message:</label><br>
-                <textarea placeholder="Your message" id="message" name="message" rows="5" required></textarea>
-            </div><br>
-
-            <button type="submit">Send</button>
-        </form>
-
-    </section>
-    <!-- Project Section-->
-    <section id="projectsSection" class="page-section centerSection">
-        <h1>My Projects</h1>
-        <p>ongoing developing</p>
-
-
-
-
-        <div class="project-card">
-            <h4>
-                Plate Number Recognition
-                <button class="toggleVideoBtn">Watch</button>
-            </h4>
-
-            <img src="platenumberrecognition.png" alt="PlateNumberRecognition" class="project-thumbnail">
-            <!-- <p>Utilizing YOLO for object detection and Flask for Web application.</p> -->
-
-            <div class="project-video" style="display: none;">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/xHOkf1lmXvY?si=wtXQt8epRBL-RHYk"
-                    title="Plate Number Recognition" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-
-
-        </div>
-
-        <div class="project-card">
-            <h4>
-                Gun Detection
-                <button class="toggleVideoBtn">Watch</button>
-            </h4>
-
-            <img src="gundetection.png" alt="GunDetection" class="project-thumbnail">
-            <!-- <p>Utilizing YOLO for object detection and Flask for Web application.</p> -->
-
-            <div class="project-video" style="display: none;">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/_nqwbiKRMwU?si=aAWlxsyRUCF6abXX"
-                    title="Gun Detection" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-
-
-
-        <br>
-        <br>
-        <br>
-        <h2>Certificates</h2>
-
-        <div class="certificate">
-            <img src="Data Center and Network Infrastrature.png" alt="Data Center and Network Infrastrature">
-            <img src="Basic Networking.png" alt="Basic Networking">
-            <img src="BOSH.jpg" alt="BOSH">
-        </div>
-        <div class="certificate">
-            <img src="Cyber Crime Law.png" alt="Cyber Crime Law">
-            <img src="Cyber Security Threat.JPG" alt="Cyber Security Threat">
-            <img src="Data Analytics Python.jpg" alt="Data Analytics Python">
-        </div>
-        <div class="certificate">
-            <img src="SemiConductor Secrets.png" alt="SemiConductor Secrets">
-            <img src="Git Introduction.png" alt="Git Introduction">
-            <img src="Future of Machine Learning.png" alt="Future of Machine Learning">
-        </div>
-
-
-    </section>
-    <!-- About Section-->
-    <section id="aboutSection" class="page-section">
-        <div class="container">
-            <div class="header-row">
-                <h2>
-                    <span>Brother Industries Philippines Inc.</span>
-                </h2>
-                <span><b>-IT System Maintenance;</b> <i>Tanauan City, Batangas <u>(May 29, 2025 -
-                            Present)</u></i></span> <br> <br>
-                <img class="biphlogo" src="biph logo.png" alt="BIPH LOGO">
-            </div>
-            <hr>
-            <div class="header-row">
-                <h2>
-                    <span>Sophie’s Information Technology Inc. </span>
-                </h2>
-                <span><b>-Intern;</b> <i>; Lipa City, Batangas <u>(January 2024 - March 2024)</u></i></span>
-                <img class="biphlogo" src="sitesphil.png" alt="BIPH LOGO">
-            </div>
-
-
-        </div>
-
-
-
-    </section>
-
-    <!-- HOME Section-->
-    <section id="kurtSection" class="page-section active">
-        <!--<h1 class="title">Welcome to my personal webpage!</h1>-->
-
-        <div class="two-column-section">
-            <div class="infoDetails">
-                <h1 id="line1">Hi, I'm</h1>
-                <h1 id="decrypt-name"></h1>
-                <br>
-                <br>
-                <a href="https://github.com/devKurt6" class="iconProfile"><i class="fa-brands fa-square-github" ></i></a>
-                <a href="https://www.facebook.com/KurtCortezDecena6" class="iconProfile"><i class="fa-brands fa-square-facebook"></i></a>
-                <a href="https://www.linkedin.com/in/kurt-decena-50b366277/" class="iconProfile"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="mailto:kurtdecena41@gmail.com" class="iconProfile"><i class="fa-solid fa-message"></i></a>
-                <br>
-                <a href="IT-Kurt-Decena.pdf" class="iconProfile"><i class="fa-solid fa-download"></i></a>
-                <!-- <a href="IT-Kurt-Decena.pdf" download>
-                    <button>Download</button>
-                </a> -->
-            </div>
-            <img src="barong Kurt.jpg" alt="anime" class="profilepic slide-in-elliptic-top-fwd">
-        </div>
-
-        <!-- <h1 class="typewriter dark-mode">Kurt Decena</h1> -->
-        <div class="content-wrapper">
-
-
-
-
-
-
-
-            <!---->
-
-
-            <div class="">
-                <p style="font-size: 24px">I am passionate about technology and love to learn more about Software
-                    Development.</p>
-                <p style="font-size: 24px">Feel free to explore my projects and get in touch!</p>
-                <br>
-
-                <section class="two-column-section">
-                    <div class="column left">
-                        <div class="project-card">
-                            <h4>
-                                Embedded System Plate Number Recognition
-                                <button class="toggleVideoBtn">Watch</button>
-                                
-                            </h4>
-                            <h1></h1>
-                            
-                            <img src="SystemDevice.png" alt="SystemDevice"
-                                class="project-thumbnail">
-                            
-                            <!-- <p>Utilizing YOLO for object detection and Flask for Web application.</p> -->
-                             
-                            <div class="project-video" style="display: none;">
-                                <iframe width="560" height="315"
-                                    src="https://www.youtube.com/embed/AqmeAzkVSvQ?si=HUasoJiZpp662_-g"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                                </iframe>
-                            </div>
-                        </div>
-                        
+    <!-- HOME Section -->
+    <section id="home" class="page-section active">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="hero-greeting">Hi, I'm</span>
+                    <h1 id="decrypt-name" class="hero-name">Kurt Decena</h1>
+                    <p class="hero-subtitle">Software Developer & Technology Enthusiast</p>
+                    <p class="hero-description">Passionate about creating innovative solutions through code. Specializing in embedded systems, computer vision, and web development.</p>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/devKurt6" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.facebook.com/KurtCortezDecena6" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kurt-decena-50b366277/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:kurtdecena41@gmail.com" class="social-link" aria-label="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
                     </div>
-                    <div class="column right">
-                        <p>right paragraph nothing here!</p>
+                    
+                    <div class="hero-actions">
+                        <a href="IT-Kurt-Decena.pdf" class="btn btn-primary" download>
+                            <i class="fa-solid fa-download"></i> Download Resume
+                        </a>
+                        <button class="btn btn-secondary" data-section="projects">
+                            View Projects <i class="fa-solid fa-arrow-right"></i>
+                        </button>
                     </div>
-                    <br>
-                    <br>
-                </section>
-
-                <p><b>Favorite programming laguange:</b></p>
-                <div class="code">
-
-                    <pre><code>
-#include &lt;iostream&gt;
+                </div>
+                
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="barong Kurt.jpg" alt="Kurt Decena" class="profile-pic">
+                        <div class="image-backdrop"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Featured Project Preview -->
+            <div class="featured-project">
+                <h3>Featured Project</h3>
+                <div class="project-preview">
+                    <div class="project-preview-content">
+                        <h4>Embedded System Plate Number Recognition</h4>
+                        <p>Real-time license plate detection and recognition system using YOLO and edge computing.</p>
+                        <button class="btn btn-text" data-section="projects">
+                            Learn More <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="project-preview-image">
+                        <img src="SystemDevice.png" alt="Plate Recognition System">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tech Stack -->
+            <div class="tech-stack">
+                <h3>Favorite Technologies</h3>
+                <div class="code-snippet">
+                    <div class="code-header">
+                        <span class="code-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <span class="code-language">C++</span>
+                    </div>
+                    <pre><code>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
-cout &lt;&lt; "Hello World!";
-return 0;
-}_</code></pre>
+    cout &lt;&lt; "Hello World!";
+    return 0;
+}</code></pre>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- PROJECTS Section -->
+    <section id="projects" class="page-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Projects</h2>
+                <p>A showcase of my technical work and creative solutions</p>
+            </div>
 
-    <section>
+            <div class="projects-grid">
+                <div class="project-card featured-card">
+                    <div class="project-image">
+                        <img src="SystemDevice.png" alt="Embedded System Plate Recognition" class="project-thumbnail">
+                        <div class="project-overlay">
+                            <button class="play-btn" data-video="AqmeAzkVSvQ" aria-label="Watch video">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Featured</span>
+                        <h3>Embedded System Plate Number Recognition</h3>
+                        <p>Advanced computer vision system utilizing YOLO for real-time object detection, deployed on embedded hardware for efficient license plate recognition.</p>
+                        <div class="project-tech">
+                            <span>YOLO</span>
+                            <span>Python</span>
+                            <span>Embedded Systems</span>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="platenumberrecognition.png" alt="Plate Number Recognition" class="project-thumbnail">
+                        <div class="project-overlay">
+                            <button class="play-btn" data-video="xHOkf1lmXvY" aria-label="Watch video">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Plate Number Recognition</h3>
+                        <p>Web-based license plate recognition system with Flask backend and real-time processing capabilities.</p>
+                        <div class="project-tech">
+                            <span>YOLO</span>
+                            <span>Flask</span>
+                            <span>OpenCV</span>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="gundetection.png" alt="Gun Detection" class="project-thumbnail">
+                        <div class="project-overlay">
+                            <button class="play-btn" data-video="_nqwbiKRMwU" aria-label="Watch video">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Gun Detection System</h3>
+                        <p>Security-focused computer vision application for real-time weapon detection and alert systems.</p>
+                        <div class="project-tech">
+                            <span>YOLO</span>
+                            <span>Flask</span>
+                            <span>Computer Vision</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Video Modal -->
+            <div id="videoModal" class="video-modal">
+                <div class="video-modal-content">
+                    <button class="video-close-btn" aria-label="Close video">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="video-container">
+                        <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Certificates Section -->
+            <div class="certificates-section">
+                <h3>Certifications & Achievements</h3>
+                <div class="certificates-grid">
+                    <div class="certificate-item">
+                        <img src="Data Center and Network Infrastrature.png" alt="Data Center and Network Infrastructure">
+                        <div class="certificate-overlay">
+                            <span>Data Center & Network Infrastructure</span>
+                        </div>
+                    </div>
+                    <div class="certificate-item">
+                        <img src="Basic Networking.png" alt="Basic Networking">
+                        <div class="certificate-overlay">
+                            <span>Basic Networking</span>
+                        </div>
+                    </div>
+                    <div class="certificate-item">
+                        <img src="BOSH.jpg" alt="BOSH">
+                        <div class="certificate-overlay">
+                            <span>BOSH</span>
+                        </div>
+                    </div>
+                    <div class="certificate-item">
+                        <img src="Cyber Crime Law.png" alt="Cyber Crime Law">
+                        <div class="certificate-overlay">
+                            <span>Cyber Crime Law</span>
+                        </div>
+                    </div>
+                    <div class="certificate-item">
+                        <img src="Cyber Security Threat.JPG" alt="Cyber Security Threat">
+                        <div class="certificate-overlay">
+                            <span>Cyber Security Threat</span>
+                        </div>
+                    </div>
+                    <div class="certificate-item">
+                        <img src="Data Analytics Python.jpg" alt="Data Analytics Python">
+                        <div class="certificate-overlay">
+                            <span>Data Analytics Python</span>
+                        </div>
+                    </div>
+                    <div class="certificate-item">
+                        <img src="SemiConductor Secrets.png" alt="Semiconductor Secrets">
+                        <div class="certificate-overlay">
+                            <span>Semiconductor Secrets</span>
+                        </div>
+                    </div>
+                    <div class="certificate-item">
+                        <img src="Git Introduction.png" alt="Git Introduction">
+                        <div class="certificate-overlay">
+                            <span>Git Introduction</span>
+                        </div>
+                    </div>
+                    <div class="certificate-item">
+                        <img src="Future of Machine Learning.png" alt="Future of Machine Learning">
+                        <div class="certificate-overlay">
+                            <span>Future of Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <!-- <footer>
-        <p>© <span id="year"></span> Kurt Decena. All rights reserved.</p>
-    </footer> -->
-    <script src="script.js">
-    </script>
+
+    <!-- ABOUT Section -->
+    <section id="about" class="page-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Experience</h2>
+                <p>My professional journey in technology</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Brother Industries Philippines Inc.</h3>
+                                <span class="job-title">IT System Maintenance</span>
+                            </div>
+                            <img src="biph logo.png" alt="BIPH Logo" class="company-logo">
+                        </div>
+                        <div class="timeline-meta">
+                            <span class="timeline-location">
+                                <i class="fas fa-map-marker-alt"></i> Tanauan City, Batangas
+                            </span>
+                            <span class="timeline-date">
+                                <i class="fas fa-calendar"></i> May 2025 - Present
+                            </span>
+                        </div>
+                        <p>Responsible for maintaining and troubleshooting IT systems, ensuring optimal performance and reliability of company infrastructure.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Sophie's Information Technology Inc.</h3>
+                                <span class="job-title">Intern</span>
+                            </div>
+                            <img src="sitesphil.png" alt="SITES Logo" class="company-logo">
+                        </div>
+                        <div class="timeline-meta">
+                            <span class="timeline-location">
+                                <i class="fas fa-map-marker-alt"></i> Lipa City, Batangas
+                            </span>
+                            <span class="timeline-date">
+                                <i class="fas fa-calendar"></i> January 2024 - March 2024
+                            </span>
+                        </div>
+                        <p>Gained practical experience in software development and IT operations, working on various projects and learning industry best practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT Section -->
+    <section id="contact" class="page-section">
+        <div class="section-container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Let's Work Together</h2>
+                    <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:kurtdecena41@gmail.com">kurtdecena41@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Imus, Calabarzon, Philippines</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links-contact">
+                        <a href="https://github.com/devKurt6" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.facebook.com/KurtCortezDecena6" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kurt-decena-50b366277/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form class="contact-form" name="contact" method="POST" netlify action="success.html">
+                        <input type="hidden" name="form-name" value="contact">
+                        
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell me about your project..." rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            Send Message <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
