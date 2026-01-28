@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Kurt Decena</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Kurt Decena</a>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li>
+                    <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Error Message Section -->
+    <div class="success-container">
+        <div class="success-content">
+            <!-- Error Icon -->
+            <div class="success-icon error-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+
+            <!-- Main Message -->
+            <h1>Oops! Something Went Wrong</h1>
+            <p>We encountered an issue while sending your message. Don't worry - this happens sometimes!</p>
+
+            <!-- Error Info Cards -->
+            <div class="info-cards">
+                <div class="info-card">
+                    <i class="fas fa-redo"></i>
+                    <h4>Try Again</h4>
+                    <p>Please try submitting again</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Direct Email</h4>
+                    <p>Or email me directly</p>
+                </div>
+            </div>
+
+            <!-- Possible Reasons -->
+            <div class="error-reasons">
+                <h3>What might have caused this?</h3>
+                <ul>
+                    <li><i class="fas fa-wifi"></i> Network connection issue</li>
+                    <li><i class="fas fa-server"></i> Server temporarily unavailable</li>
+                    <li><i class="fas fa-clock"></i> Request timeout</li>
+                </ul>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="success-actions">
+                <a href="index.html#contact" class="btn btn-primary">
+                    <i class="fas fa-redo"></i> Try Again
+                </a>
+                <a href="mailto:kurtdecena41@gmail.com" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Email Me Directly
+                </a>
+            </div>
+
+            <!-- Alternative Contact Methods -->
+            <div class="alternative-contact">
+                <h3>Alternative Ways to Reach Me</h3>
+                <p>You can also contact me through these platforms:</p>
+                
+                <div class="contact-methods">
+                    <a href="mailto:kurtdecena41@gmail.com" class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <span>kurtdecena41@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kurt-decena-50b366277/" class="contact-method" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn Message</span>
+                    </a>
+                    <a href="https://www.facebook.com/KurtCortezDecena6" class="contact-method" target="_blank" rel="noopener">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook Messenger</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links" style="margin-top: 2rem; justify-content: center;">
+                <a href="https://github.com/devKurt6" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.facebook.com/KurtCortezDecena6" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/kurt-decena-50b366277/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:kurtdecena41@gmail.com" class="social-link" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

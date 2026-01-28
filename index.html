@@ -57,8 +57,9 @@
             <button id="closeBtn" class="close-btn" aria-label="Close form">
                 <i class="fas fa-times"></i>
             </button>
-            <form name="contact" method="POST" netlify action="success.html">
+            <form name="contact" method="POST" netlify action="success.html" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
                 <input type="hidden" name="form-name" value="contact">
+                <input type="hidden" name="error-redirect" value="error.html">
                 <h3>Get In Touch</h3>
                 <div class="form-group">
                     <label for="popup-name">Name</label>
@@ -402,8 +403,9 @@ int main() {
                 </div>
 
                 <div class="contact-form-container">
-                    <form class="contact-form" name="contact" method="POST" netlify action="success.html">
-                        <input type="hidden" name="form-name" value="contact">
+                    <form class="contact-form" name="contact-main" method="POST" netlify action="success.html" netlify-honeypot="bot-field">
+                        <input type="hidden" name="form-name" value="contact-main">
+                        <input type="hidden" name="error-redirect" value="error.html">
                         
                         <div class="form-group">
                             <label for="name">Name</label>
