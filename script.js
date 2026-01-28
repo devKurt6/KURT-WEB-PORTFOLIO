@@ -376,6 +376,33 @@ if ('loading' in HTMLImageElement.prototype) {
 }
 
 // ============================================
+// SUCCESS PAGE CONFETTI EFFECT
+// ============================================
+function createConfetti() {
+  const colors = ['#0066ff', '#00d4ff', '#00ff88', '#ff6b6b', '#ffd93d'];
+  for (let i = 0; i < 50; i++) {
+    setTimeout(() => {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * 100 + '%';
+      confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.animationDelay = Math.random() * 0.5 + 's';
+      confetti.style.animationDuration = Math.random() * 2 + 2 + 's';
+      document.body.appendChild(confetti);
+      
+      setTimeout(() => confetti.remove(), 3000);
+    }, i * 30);
+  }
+}
+
+// Trigger confetti if on success page
+if (document.querySelector('.success-container')) {
+  window.addEventListener('load', () => {
+    createConfetti();
+  });
+}
+
+// ============================================
 // CONSOLE EASTER EGG
 // ============================================
 console.log('%c👋 Hello there!', 'font-size: 24px; font-weight: bold; color: #0066ff;');
