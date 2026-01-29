@@ -8,14 +8,16 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
 
 </head>
 
@@ -25,7 +27,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" data-section="home" class="nav-logo">Kurt Decena</a>
-            
+
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
@@ -57,9 +59,10 @@
             <button id="closeBtn" class="close-btn" aria-label="Close form">
                 <i class="fas fa-times"></i>
             </button>
-            <form name="contact" method="POST" netlify action="success.html" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+            <form name="contact" method="POST" netlify action="success.html" netlify-honeypot="bot-field"
+                data-netlify-recaptcha="true">
                 <input type="hidden" name="form-name" value="contact">
-                <input type="hidden" name="error-redirect" value="error.html">
+                <!-- <input type="hidden" name="error-redirect" value="error.html"> -->
                 <h3>Get In Touch</h3>
                 <div class="form-group">
                     <label for="popup-name">Name</label>
@@ -71,8 +74,11 @@
                 </div>
                 <div class="form-group">
                     <label for="popup-message">Message</label>
-                    <textarea id="popup-message" name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
+                    <textarea id="popup-message" name="message" placeholder="Tell me about your project..." rows="5"
+                        required></textarea>
                 </div>
+                <!-- REQUIRED for reCAPTCHA -->
+                <div data-netlify-recaptcha="true"></div>
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
         </div>
@@ -86,23 +92,27 @@
                     <span class="hero-greeting">Hi, I'm</span>
                     <h1 id="decrypt-name" class="hero-name">Kurt Decena</h1>
                     <p class="hero-subtitle">Software Developer & Technology Enthusiast</p>
-                    <p class="hero-description">Passionate about creating innovative solutions through code. Specializing in embedded systems, computer vision, and web development.</p>
-                    
+                    <p class="hero-description">Passionate about creating innovative solutions through code.
+                        Specializing in embedded systems, computer vision, and web development.</p>
+
                     <div class="social-links">
-                        <a href="https://github.com/devKurt6" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
+                        <a href="https://github.com/devKurt6" class="social-link" aria-label="GitHub" target="_blank"
+                            rel="noopener">
                             <i class="fa-brands fa-github"></i>
                         </a>
-                        <a href="https://www.facebook.com/KurtCortezDecena6" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+                        <a href="https://www.facebook.com/KurtCortezDecena6" class="social-link" aria-label="Facebook"
+                            target="_blank" rel="noopener">
                             <i class="fa-brands fa-facebook"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/kurt-decena-50b366277/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                        <a href="https://www.linkedin.com/in/kurt-decena-50b366277/" class="social-link"
+                            aria-label="LinkedIn" target="_blank" rel="noopener">
                             <i class="fa-brands fa-linkedin"></i>
                         </a>
                         <a href="mailto:kurtdecena41@gmail.com" class="social-link" aria-label="Email">
                             <i class="fa-solid fa-envelope"></i>
                         </a>
                     </div>
-                    
+
                     <div class="hero-actions">
                         <a href="IT-Kurt-Decena.pdf" class="btn btn-primary" download>
                             <i class="fa-solid fa-download"></i> Download Resume
@@ -112,7 +122,7 @@
                         </button>
                     </div>
                 </div>
-                
+
                 <div class="hero-image">
                     <div class="image-wrapper">
                         <img src="barong Kurt.jpg" alt="Kurt Decena" class="profile-pic">
@@ -120,7 +130,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Featured Project Preview -->
             <div class="featured-project">
                 <h3>Featured Project</h3>
@@ -137,7 +147,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Tech Stack -->
             <div class="tech-stack">
                 <h3>Favorite Technologies</h3>
@@ -183,7 +193,8 @@ int main() {
                     <div class="project-info">
                         <span class="project-tag">Featured</span>
                         <h3>Embedded System Plate Number Recognition</h3>
-                        <p>Advanced computer vision system utilizing YOLO for real-time object detection, deployed on embedded hardware for efficient license plate recognition.</p>
+                        <p>Advanced computer vision system utilizing YOLO for real-time object detection, deployed on
+                            embedded hardware for efficient license plate recognition.</p>
                         <div class="project-tech">
                             <span>YOLO</span>
                             <span>Python</span>
@@ -203,7 +214,8 @@ int main() {
                     </div>
                     <div class="project-info">
                         <h3>Plate Number Recognition</h3>
-                        <p>Web-based license plate recognition system with Flask backend and real-time processing capabilities.</p>
+                        <p>Web-based license plate recognition system with Flask backend and real-time processing
+                            capabilities.</p>
                         <div class="project-tech">
                             <span>YOLO</span>
                             <span>Flask</span>
@@ -223,7 +235,8 @@ int main() {
                     </div>
                     <div class="project-info">
                         <h3>Gun Detection System</h3>
-                        <p>Security-focused computer vision application for real-time weapon detection and alert systems.</p>
+                        <p>Security-focused computer vision application for real-time weapon detection and alert
+                            systems.</p>
                         <div class="project-tech">
                             <span>YOLO</span>
                             <span>Flask</span>
@@ -240,7 +253,9 @@ int main() {
                         <i class="fas fa-times"></i>
                     </button>
                     <div class="video-container">
-                        <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe id="videoFrame" src="" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -250,7 +265,8 @@ int main() {
                 <h3>Certifications & Achievements</h3>
                 <div class="certificates-grid">
                     <div class="certificate-item">
-                        <img src="Data Center and Network Infrastrature.png" alt="Data Center and Network Infrastructure">
+                        <img src="Data Center and Network Infrastrature.png"
+                            alt="Data Center and Network Infrastructure">
                         <div class="certificate-overlay">
                             <span>Data Center & Network Infrastructure</span>
                         </div>
@@ -335,7 +351,8 @@ int main() {
                                 <i class="fas fa-calendar"></i> May 2025 - Present
                             </span>
                         </div>
-                        <p>Responsible for maintaining and troubleshooting IT systems, ensuring optimal performance and reliability of company infrastructure.</p>
+                        <p>Responsible for maintaining and troubleshooting IT systems, ensuring optimal performance and
+                            reliability of company infrastructure.</p>
                     </div>
                 </div>
 
@@ -357,7 +374,8 @@ int main() {
                                 <i class="fas fa-calendar"></i> January 2024 - March 2024
                             </span>
                         </div>
-                        <p>Gained practical experience in software development and IT operations, working on various projects and learning industry best practices.</p>
+                        <p>Gained practical experience in software development and IT operations, working on various
+                            projects and learning industry best practices.</p>
                     </div>
                 </div>
             </div>
@@ -370,8 +388,9 @@ int main() {
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <h2>Let's Work Together</h2>
-                    <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!</p>
-                    
+                    <p>I'm always interested in hearing about new projects and opportunities. Whether you have a
+                        question or just want to say hi, feel free to reach out!</p>
+
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
@@ -390,23 +409,27 @@ int main() {
                     </div>
 
                     <div class="social-links-contact">
-                        <a href="https://github.com/devKurt6" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
+                        <a href="https://github.com/devKurt6" class="social-link" aria-label="GitHub" target="_blank"
+                            rel="noopener">
                             <i class="fa-brands fa-github"></i>
                         </a>
-                        <a href="https://www.facebook.com/KurtCortezDecena6" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+                        <a href="https://www.facebook.com/KurtCortezDecena6" class="social-link" aria-label="Facebook"
+                            target="_blank" rel="noopener">
                             <i class="fa-brands fa-facebook"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/kurt-decena-50b366277/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                        <a href="https://www.linkedin.com/in/kurt-decena-50b366277/" class="social-link"
+                            aria-label="LinkedIn" target="_blank" rel="noopener">
                             <i class="fa-brands fa-linkedin"></i>
                         </a>
                     </div>
                 </div>
 
                 <div class="contact-form-container">
-                    <form class="contact-form" name="contact-main" method="POST" netlify action="success.html" netlify-honeypot="bot-field">
+                    <form class="contact-form" name="contact-main" method="POST" netlify action="success.html"
+                        netlify-honeypot="bot-field">
                         <input type="hidden" name="form-name" value="contact-main">
-                        <input type="hidden" name="error-redirect" value="error.html">
-                        
+                        <!-- <input type="hidden" name="error-redirect" value="error.html"> -->
+
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -419,7 +442,8 @@ int main() {
 
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Tell me about your project..." rows="6" required></textarea>
+                            <textarea id="message" name="message" placeholder="Tell me about your project..." rows="6"
+                                required></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary">
