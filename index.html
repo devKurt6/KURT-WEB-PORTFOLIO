@@ -49,9 +49,9 @@
     </nav>
 
     <!-- Floating Contact Button -->
-    <button id="contactIcon" class="floating-contact" aria-label="Open contact form">
+    <!-- <button id="contactIcon" class="floating-contact" aria-label="Open contact form">
         <i class="fa-solid fa-message"></i>
-    </button>
+    </button> -->
 
     <!-- Contact Popup Form -->
     <div id="popupForm" class="popup-overlay">
@@ -454,8 +454,41 @@ int main() {
             </div>
         </div>
     </section>
+    <!-- AI Chat FAB -->
+<button id="chatToggle" class="chat-fab-btn" aria-label="Chat with Kurt's AI">
+  <i class="fa-solid fa-robot chat-fab-icon"></i>
+</button>
 
-    <script src="script.js"></script>
+<!-- Chat Window -->
+<div id="chatWindow" class="chat-win">
+  <div class="chat-win-header">
+    <div class="chat-win-header-left">
+      <div class="chat-win-avatar"><i class="fa-solid fa-robot"></i></div>
+      <div>
+        <strong>Kurt's AI Assistant</strong>
+        <span class="chat-status"><span class="chat-status-dot"></span> Online</span>
+      </div>
+    </div>
+    <button id="chatClose" class="chat-win-close"><i class="fas fa-times"></i></button>
+  </div>
+
+  <div id="chatMessages" class="chat-win-body">
+    <div class="chat-msg-row chat-bot">
+      <div class="chat-msg-avatar"><i class="fa-solid fa-robot"></i></div>
+      <div class="chat-bubble chat-bubble-bot">
+        Hi! I'm Kurt's AI assistant. Ask me anything about his projects or skills! 👋
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-win-footer">
+    <input id="chatInput" class="chat-input" type="text" placeholder="Ask something..." autocomplete="off" />
+    <button id="chatSendBtn" class="chat-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+  </div>
+</div>
+
+<script src="chat.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>
