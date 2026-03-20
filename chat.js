@@ -138,7 +138,7 @@ async function sendMessage() {
 
   } catch (err) {
     removeTyping();
-    addBubble(`⚠️ Can't reach backend. Make sure ngrok is running. (${err.message})`, 'bot');
+    addBubble(`⚠️ Can't reach backend. Please comeback later. (${err.message})`, 'bot');
   } finally {
     chatInput.disabled = false;
     chatSend.disabled  = false;
