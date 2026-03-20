@@ -2,7 +2,7 @@
 // KURT'S AI CHAT — FastAPI + Ollama via ngrok
 // ============================================
 
-const BACKEND_URL = 'https://8b1c-126-209-24-82.ngrok-free.app'; // 🔁 update each ngrok restart
+// const BACKEND_URL = ''; // 🔁 update each ngrok restart
 const SESSION_ID  = 'sess_' + Math.random().toString(36).slice(2, 10);
 
 const chatFab   = document.getElementById('chatToggle');
@@ -118,7 +118,7 @@ async function sendMessage() {
   showTyping();
 
   try {
-    const res = await fetch(`${BACKEND_URL}/chat-stream`, {
+    const res = await fetch('/.netlify/functions/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
