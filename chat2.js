@@ -52,6 +52,7 @@ function addBubble(text, role) {
 
   chatMsgs.appendChild(row);
   scrollBottom();
+  
   return bubble;
 }
 
@@ -83,26 +84,19 @@ function removeTyping() {
 }
 
 // Smooth typewriter for streamed text
-async function typewriter(bubble, reader) {
-  const decoder = new TextDecoder();
-  const cursor  = document.createElement('span');
+async function typewriter(bubble, text) {
+  const cursor = document.createElement('span');
   cursor.className = 'chat-cursor';
   bubble.textContent = '';
   bubble.appendChild(cursor);
 
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    const chunk = decoder.decode(value, { stream: true });
-    // insert each char before cursor with a tiny delay
-    for (const char of chunk) {
-      const node = document.createTextNode(char);
-      bubble.insertBefore(node, cursor);
-      scrollBottom();
-      await new Promise(r => setTimeout(r, 12));
-    }
+  for (const char of text) {
+    const node = document.createTextNode(char);
+    bubble.insertBefore(node, cursor);
+    scrollBottom();
+    await new Promise(r => setTimeout(r, 12));
   }
-  cursor.remove(); // hide cursor when done
+  cursor.remove();
 }
 
 // ── Send ──────────────────────────────────────────────
@@ -128,17 +122,15 @@ async function sendMessage() {
       })
     });
 
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-    removeTyping();
-
-    // create empty bot bubble and stream into it
-    const bubble = addBubble('', 'bot');
-    await typewriter(bubble, res.body.getReader());
+    // DELETE everything below and replace with:
+const reply = await res.text();
+removeTyping();
+const bubble = addBubble('', 'bot');
+await typewriter(bubble, reply); // pass the text directly now
 
   } catch (err) {
     removeTyping();
-    addBubble(`⚠️ Can't reach backend. Make sure ngrok is running. (${err.message})`, 'bot');
+    addBubble(`⚠️ CSomething went wrong. Please try again later. (${err.message})`, 'bot');
   } finally {
     chatInput.disabled = false;
     chatSend.disabled  = false;
